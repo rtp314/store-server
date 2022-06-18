@@ -2,6 +2,7 @@ require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 const app = express();
+const path = require("path");
 const PORT = process.env.PORT || 8000;
 const stripe = require("stripe")(process.env.STRIPE_KEY);
 const YOUR_DOMAIN = "http://localhost:3000";
@@ -57,7 +58,7 @@ const testItems = [
     },
 ];
 
-app.use(express.static("public")); //serves files in public folder
+app.use(express.static(path.join(__dirname, "..", "public"))); //serves files in public folder
 app.use(cors());
 app.use(express.json()); //creates req.body
 
