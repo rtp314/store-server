@@ -94,9 +94,9 @@ app.post("/stripe-webhook", (req, res) => {
     res.statusCode(400);
 });
 
-app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, "index.html"));
-});
+// app.get("/", (req, res) => {
+//     res.sendFile(path.join(__dirname, "index.html"));
+// });
 
 app.listen(PORT, (err) => {
     if (err) console.log(err);
