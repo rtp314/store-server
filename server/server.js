@@ -2,10 +2,8 @@ require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 const app = express();
-const PORT = 8000;
-const stripe = require("stripe")(
-    "sk_test_51KjeX6IZqjivVMp2Aw26tPZjkWBY3kYVS1dGRQUAuzCOzoyuHTWaENIV3XQJRA6lvjDwwWGusdAfBJCXztOtlHDY00DBiULIk1"
-);
+const PORT = process.env.PORT || 8000;
+const stripe = require("stripe")(process.env.STRIPE_KEY);
 const YOUR_DOMAIN = "http://localhost:3000";
 
 const testItems = [
