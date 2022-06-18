@@ -58,7 +58,7 @@ const testItems = [
     },
 ];
 
-app.use(express.static(path.join(__dirname, "..", "public"))); //serves files in public folder
+app.use(express.static(path.join(__dirname, "public"))); //serves files in public folder
 app.use(cors());
 app.use(express.json()); //creates req.body
 
