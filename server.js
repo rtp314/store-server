@@ -79,8 +79,8 @@ app.post("/create-stripe-session", async (req, res) => {
                 };
             }),
             mode: "payment",
-            success_url: `${YOUR_DOMAIN}/success.html`,
-            cancel_url: `${YOUR_DOMAIN}/cancel.html`,
+            success_url: `${YOUR_DOMAIN}/success`,
+            cancel_url: `${YOUR_DOMAIN}/cancel`,
         });
         res.status(200).json(session.url);
     } catch (err) {
@@ -95,7 +95,7 @@ app.post("/stripe-webhook", (req, res) => {
 });
 
 // app.get("/", (req, res) => {
-//     res.sendFile(path.join(__dirname, "index.html"));
+//     res.sendFile(path.join(__dirname, "public", "index.html"));
 // });
 
 app.listen(PORT, (err) => {
