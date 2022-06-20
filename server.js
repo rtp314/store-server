@@ -80,8 +80,8 @@ app.post("/create-stripe-session", async (req, res) => {
                 };
             }),
             mode: "payment",
-            success_url: `${YOUR_DOMAIN}/success`,
-            cancel_url: `${YOUR_DOMAIN}/cancel`,
+            success_url: `${YOUR_DOMAIN}/#/success`,
+            cancel_url: `${YOUR_DOMAIN}/#/cancel`,
         });
         res.status(200).json(session.url);
     } catch (err) {
